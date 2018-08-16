@@ -47,7 +47,7 @@ jobs:
           command : heroku container:login
       - run: 
           name: docker build
-          command : docker build
+          command : docker build .
       - run :
           name: Heroku docker build
           command : heroku container:push web --app quesgenerator
