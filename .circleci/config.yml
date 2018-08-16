@@ -37,6 +37,8 @@ jobs:
     machine :
         enable: true
     working_directory : ~/question-generator
+    docker:
+      - image: circleci/node:8
     steps:
       - checkout
       - run:
