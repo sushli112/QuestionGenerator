@@ -47,7 +47,7 @@ jobs:
           command : heroku container:login
       - run: 
           name: docker build
-          command : docker build .
+          command : docker build
       - run :
           name: Heroku docker build
           command : heroku container:push web --app quesgenerator
@@ -58,19 +58,19 @@ workflows:
   version: 2
   build_test_and_deploy:
       jobs:
-        # - buildProject:
-        #     filters:
-        #       branches: 
-        #         only: master
-        # - test:
-        #     requires:
-        #       - buildProject
-        #     filters :
-        #       branches :
-        #         only: master
+        - buildProject:
+            filters:
+              branches: 
+                only: master
+        - test:
+            requires:
+              - buildProject
+            filters :
+              branches :
+                only: master
         - deploy:
-            # requires:
-            #   - test
+            requires:
+              - test
             filters:
               branches :
                 only : master

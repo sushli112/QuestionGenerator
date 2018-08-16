@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  watch: true,
+  watch: false,
   resolve: {
     extensions: ['.js', '.scss'],
   },
