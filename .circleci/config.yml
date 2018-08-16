@@ -62,15 +62,15 @@ workflows:
             filters:
               branches: 
                 only: master
-        - test:
-            requires:
-              - buildProject
-            filters :
-              branches :
-                only: master
+        # - test:
+        #     requires:
+        #       - buildProject
+        #     filters :
+        #       branches :
+        #         only: master
         - deploy:
             requires:
-              - test
+              - buildProject
             filters:
               branches :
                 only : master
