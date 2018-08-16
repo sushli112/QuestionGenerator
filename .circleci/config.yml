@@ -47,8 +47,8 @@ jobs:
           name: Heroku container login
           command : heroku container:login
       - run: 
-          name: heroku container help
-          command : heroku help container
+          name: ls help
+          command : ls
       - run :
           name: Heroku docker build
           command : heroku container:push web --app quesgenerator
