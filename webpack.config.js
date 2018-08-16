@@ -22,15 +22,15 @@ module.exports = {
         use: 'babel-loader', // which will perform some functioanlity during build process.
         exclude: [/node_modules/, /dist/], // expect this
       },
-      {
-        test: /\.js$/,
-        include: [/src/, /tests/],
-        loader: 'eslint-loader',
-        options: {
-          //fix: true
-        }
+      // {
+      //   test: /\.js$/,
+      //   include: [/src/, /tests/],
+      //   loader: 'eslint-loader',
+      //   options: {
+      //     //fix: true
+      //   }
 
-      },
+      // },
       {
         test: /\.scss$/,
         use: [

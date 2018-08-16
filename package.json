@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently \"webpack\" \"node index.js\"",
     "test": "mocha ./tests/**/*.js  --compilers babel-register",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "lint": "eslint --fix ./src",
     "serve": "concurrently \"npm run build\" \"nodemon index.js\""
   },
