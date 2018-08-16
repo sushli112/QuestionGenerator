@@ -45,11 +45,14 @@ jobs:
       - run :
           name: Heroku container login
           command : heroku container:login
+      - run: 
+          name: docker build
+          command : docker build .
       - run :
           name: Heroku docker build
           command : heroku container:push web --app quesgenerator
       - run :
-          name : Heroku docker push
+          name : Heroku container release
           command : heroku container:release web --app quesgenerator
 workflows:
   version: 2
