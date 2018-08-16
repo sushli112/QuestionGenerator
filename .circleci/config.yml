@@ -37,8 +37,7 @@ jobs:
     machine :
         enable: true
     working_directory : ~/question-generator
-    docker:
-      - image: circleci/node:8
+    
     steps:
       - checkout
       - run:
@@ -48,8 +47,8 @@ jobs:
           name: Heroku container login
           command : heroku container:login
       - run: 
-          name: docker build
-          command : docker build .
+          name: heroku container help
+          command : heroku help container
       - run :
           name: Heroku docker build
           command : heroku container:push web --app quesgenerator
