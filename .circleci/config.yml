@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  buildProject:
     working_directory : ~/question-generator
     docker:
       - image: circleci/node:8
@@ -54,13 +54,13 @@ workflows:
   version: 2
   build_test_and_deploy:
       jobs:
-        - build:
+        - buildProject:
             filters:
               branches: 
                 only: master
         - test:
             requires:
-              - build
+              - buildProject
             filters :
               branches :
                 only: master
