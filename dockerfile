@@ -17,6 +17,7 @@ RUN npm install
  
 # Copy contents of local folder to `WORKDIR`
 # You can pick individual files based on your need
+
 COPY . .
  
 RUN npm run build
